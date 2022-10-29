@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width_stroke_profile_img">5dp</dimen>
+    <dimen name="size_txt_toolbar_title">20sp</dimen>
+    <dimen name="margin_title_toolbar">15dp</dimen>
+    <dimen name="margin_title_toolbar_top">20dp</dimen>
+    <dimen name="btn_radius">10dp</dimen>
+    <dimen name="btn_radius_profile">30dp</dimen>
+    <dimen name="size_txt_title_main">30sp</dimen>
+    <dimen name="general_margin">8dp</dimen>
+    <dimen name="margin_2x">16dp</dimen>
+    <dimen name="margin_3x">24dp</dimen>
+    <dimen name="margin_4x">32dp</dimen>
+    <dimen name="margin_5x">40dp</dimen>
+    <dimen name="size_divider">1dp</dimen>
+    <dimen name="size_img_list_profile">50dp</dimen>
+    <dimen name="margin_task_icon">20dp</dimen>
+    <dimen name="strokeWidthAttachment">2dp</dimen>
+    <dimen name="padding_bottom_create_task">100dp</dimen>
+    <dimen name="txt_size_spinner_item">15sp</dimen>
+    <dimen name="size_linear_progress">5dp</dimen>
+    <dimen name="sizeAttachFileImage">50dp</dimen>
+    <dimen name="size_profile_action">50dp</dimen>
+    <dimen name="margin_profile">100dp</dimen>
+    <dimen name="txt_size_profile_position">15sp</dimen>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="create_task_label_style">
+        <item name="android:layout_marginTop">@dimen/general_margin</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
+</resources>

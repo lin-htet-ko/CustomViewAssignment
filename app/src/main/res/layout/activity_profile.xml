@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blueBlack"
+        tools:context=".activities.ProfileActivity">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnProfileClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_2x"
+            android:backgroundTint="@color/white"
+            android:padding="@dimen/margin_2x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close"
+            app:tint="@color/black" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clProfileBackDrop"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_profile"
+            android:background="@drawable/background_create_task_attachment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnProfileClose">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.linhtetko.custom_view_assignment.components.ProfileImage
+            android:id="@+id/ivProfileImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/clProfileBackDrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clProfileBackDrop"
+            app:srcCompat="@drawable/male_cartoon"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/general_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerGuideLine"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <View
+            android:layout_width="@dimen/btn_radius_profile"
+            android:layout_height="@dimen/btn_radius_profile"
+            android:background="@drawable/background_profile_action"
+            app:layout_constraintBottom_toBottomOf="@id/ivProfileImage"
+            app:layout_constraintEnd_toEndOf="@id/ivProfileImage"
+            app:layout_constraintStart_toEndOf="@id/centerGuideLine" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileCloseTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_3x"
+            android:text="@string/lbl_close_tasks"
+            app:layout_constraintEnd_toStartOf="@id/ivProfileImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clProfileBackDrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileCloseTaskCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="361"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tvProfileCloseTask"
+            app:layout_constraintStart_toStartOf="@id/tvProfileCloseTask"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileCloseTask" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileOpenTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_3x"
+            android:text="@string/lbl_open_tasks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivProfileImage"
+            app:layout_constraintTop_toTopOf="@id/clProfileBackDrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileOpenTaskCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="3"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tvProfileOpenTask"
+            app:layout_constraintStart_toStartOf="@id/tvProfileOpenTask"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileOpenTask" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="Zachary Butler"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_txt_toolbar_title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProfileImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfilePosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="UI Designer"
+            android:textSize="@dimen/txt_size_profile_position"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+
+        <include
+            android:id="@+id/vpProfileActions"
+            layout="@layout/viewpod_profile_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_2x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProfilePosition" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlContent"
+            app:tabTextColor="@color/black"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            android:layout_width="match_parent"
+            app:tabIndicatorColor="?attr/colorSecondary"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2x"
+            app:layout_constraintTop_toBottomOf="@id/vpProfileActions" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:id="@+id/vpProfileContent"
+            android:layout_height="match_parent"
+            android:background="#33000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tlContent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

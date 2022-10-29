@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueBlack"
+    tools:context=".activities.CreateTaskActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueBlack"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/btnCreateTaskBack"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    app:srcCompat="@drawable/ic_chevron_left"
+                    app:tint="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/general_margin"
+                    android:layout_weight="2"
+                    android:text="@string/lbl_create_a_new_task"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/general_margin"
+                    android:layout_weight="1"
+                    android:text="@string/lbl_save"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorSecondary" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtClientLabel"
+                style="@style/create_task_label_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2x"
+                android:text="@string/lbl_client"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.linhtetko.custom_view_assignment.components.ProfileImage
+                android:id="@+id/ivCreateTaskTeam"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/general_margin"
+                app:layout_constraintStart_toStartOf="@id/txtClientLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtClientLabel"
+                app:srcCompat="@drawable/male_cartoon"
+                app:strokeColor="@color/blueBlack"
+                app:strokeWidth="0dp" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spCreateTaskTeams"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/general_margin"
+                android:backgroundTint="@android:color/darker_gray"
+                android:foregroundTint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@id/ivCreateTaskTeam"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivCreateTaskTeam"
+                app:layout_constraintTop_toTopOf="@id/ivCreateTaskTeam" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPjNameLabel"
+                style="@style/create_task_label_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:text="@string/lbl_project_name"
+                app:layout_constraintStart_toStartOf="@id/ivCreateTaskTeam"
+                app:layout_constraintTop_toBottomOf="@id/ivCreateTaskTeam" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPJName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/general_margin"
+                android:backgroundTint="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="@id/txtPjNameLabel"
+                app:layout_constraintStart_toStartOf="@id/txtPjNameLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtPjNameLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtStartDeadLineLabel"
+                style="@style/create_task_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:text="@string/lbl_deadline"
+                app:layout_constraintEnd_toEndOf="@id/etPJName"
+                app:layout_constraintStart_toStartOf="@id/etPJName"
+                app:layout_constraintTop_toBottomOf="@id/etPJName" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spCreateTaskStartDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:spinnerMode="dropdown"
+                android:backgroundTint="@android:color/darker_gray"
+                android:foregroundTint="@android:color/darker_gray"
+                app:layout_constraintEnd_toStartOf="@id/spCreateTaskEndDate"
+                app:layout_constraintStart_toStartOf="@id/txtStartDeadLineLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtStartDeadLineLabel" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spCreateTaskEndDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/general_margin"
+                android:backgroundTint="@android:color/darker_gray"
+                android:foregroundTint="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/spCreateTaskStartDate"
+                app:layout_constraintTop_toTopOf="@id/spCreateTaskStartDate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtStartAssigeeLabel"
+                style="@style/create_task_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:text="@string/lbl_assignee"
+                app:layout_constraintEnd_toEndOf="@id/spCreateTaskEndDate"
+                app:layout_constraintStart_toStartOf="@id/spCreateTaskEndDate"
+                app:layout_constraintTop_toBottomOf="@id/spCreateTaskEndDate" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCreateTasksAssignee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtStartAssigeeLabel"
+                tools:listitem="@layout/viewholder_profile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCategoryLabel"
+                style="@style/create_task_label_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:text="@string/lbl_category"
+                app:layout_constraintEnd_toEndOf="@id/rvCreateTasksAssignee"
+                app:layout_constraintStart_toStartOf="@id/rvCreateTasksAssignee"
+                app:layout_constraintTop_toBottomOf="@id/rvCreateTasksAssignee" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCreateTasksCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCategoryLabel"
+                tools:listitem="@layout/viewholder_category_unselected" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:background="@drawable/background_create_task_attachment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvCreateTasksCategories">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtCreateTaskDescriptionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_3x"
+                    android:text="@string/lbl_description"
+                    android:textColor="@color/blueBlack"
+                    android:textSize="@dimen/size_txt_toolbar_title"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.linhtetko.custom_view_assignment.components.ProfileImage
+                    android:id="@+id/ivCreateTaskAttachmentFiles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_3x"
+                    android:padding="@dimen/margin_2x"
+                    app:layout_constraintBottom_toBottomOf="@id/txtCreateTaskDescriptionLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtCreateTaskDescriptionLabel"
+                    app:srcCompat="@drawable/ic_attach_file"
+                    app:strokeColor="@android:color/darker_gray"
+                    app:strokeWidth="@dimen/strokeWidthAttachment"
+                    app:tint="?attr/colorSecondary" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/ddCreateTaskAttachment"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_divider"
+                    android:layout_marginEnd="@dimen/margin_3x"
+                    app:layout_constraintBottom_toBottomOf="@id/ivCreateTaskAttachmentFiles"
+                    app:layout_constraintEnd_toStartOf="@id/ivCreateTaskAttachmentFiles"
+                    app:layout_constraintStart_toStartOf="@id/txtCreateTaskDescriptionLabel" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtAttachLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_3x"
+                    android:text="@string/lbl_attachments"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="@id/ivCreateTaskAttachmentFiles"
+                    app:layout_constraintStart_toStartOf="@id/ddCreateTaskAttachment"
+                    app:layout_constraintTop_toBottomOf="@id/ddCreateTaskAttachment" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCreateTasksAttach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginVertical="@dimen/margin_2x"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/padding_bottom_create_task"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/viewholder_attachment_file"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/txtAttachLabel"
+                    app:layout_constraintStart_toStartOf="@id/txtAttachLabel"
+                    app:layout_constraintTop_toBottomOf="@id/txtAttachLabel" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCreateTask"
+        android:layout_marginHorizontal="@dimen/margin_2x"
+        android:layout_marginBottom="@dimen/margin_2x"
+        android:backgroundTint="?attr/colorSecondary"
+        android:padding="@dimen/margin_2x"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:text="@string/lbl_create_task"
+        app:cornerRadius="@dimen/btn_radius_profile" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

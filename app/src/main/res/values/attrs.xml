@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProfileImage">
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="strokeColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="PercentageProgress">
+        <attr name="innerStrokeWidth" format="dimension"/>
+        <attr name="outerStrokeWidth" format="dimension"/>
+        <attr name="innerStrokeColor" format="color"/>
+        <attr name="outerStrokeColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="progress" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="LinearProgressbar">
+        <attr name="linearProgress" format="integer"/>
+    </declare-styleable>
+</resources>

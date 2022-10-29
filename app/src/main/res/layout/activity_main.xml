@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtOMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_title_toolbar"
+        android:layout_marginTop="@dimen/margin_title_toolbar_top"
+        android:text="@string/lbl_omp_dashboard"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/size_txt_toolbar_title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMainInProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_title_toolbar"
+        android:text="@string/lbl_in_progress"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/btn_radius"
+        app:layout_constraintBottom_toBottomOf="@id/txtOMP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtOMP" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtMainCreatePage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_title_toolbar_top"
+        android:text="@string/lbl_create_additional_pages"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/size_txt_title_main"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/btnMainInProgress"
+        app:layout_constraintStart_toStartOf="@id/txtOMP"
+        app:layout_constraintTop_toBottomOf="@id/txtOMP" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtMainLastActiveDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_margin"
+        android:text="03 days"
+        app:layout_constraintStart_toStartOf="@id/txtMainCreatePage"
+        app:layout_constraintTop_toBottomOf="@id/txtMainCreatePage" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/dividerMainTop"
+        android:layout_width="@dimen/size_divider"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/general_margin"
+        app:layout_constraintBottom_toBottomOf="@id/txtMainLastActiveDay"
+        app:layout_constraintStart_toEndOf="@id/txtMainLastActiveDay"
+        app:layout_constraintTop_toTopOf="@id/txtMainLastActiveDay" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtMainToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/general_margin"
+        android:text="Dec 18, 2019"
+        app:layout_constraintBottom_toBottomOf="@id/dividerMainTop"
+        app:layout_constraintStart_toEndOf="@id/dividerMainTop"
+        app:layout_constraintTop_toTopOf="@id/dividerMainTop" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMainProfiles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_margin"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingEnd="100dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toStartOf="@id/ppMain"
+        app:layout_constraintStart_toStartOf="@id/txtMainLastActiveDay"
+        app:layout_constraintTop_toBottomOf="@id/txtMainLastActiveDay"
+        tools:listitem="@layout/view_holder_add" />
+
+    <com.linhtetko.custom_view_assignment.components.PercentageProgress
+        android:id="@+id/ppMain"
+        android:layout_width="@dimen/size_img_list_profile"
+        android:layout_height="@dimen/size_img_list_profile"
+        app:layout_constraintBottom_toBottomOf="@id/rvMainProfiles"
+        app:layout_constraintEnd_toEndOf="@id/txtMainCreatePage"
+        app:layout_constraintTop_toTopOf="@id/rvMainProfiles"
+        app:progress="50" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/general_margin"
+        android:background="@drawable/background_main_task"
+        android:orientation="vertical"
+        android:padding="@dimen/general_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ppMain"
+        app:layout_constraintStart_toStartOf="@id/rvMainProfiles"
+        app:layout_constraintTop_toBottomOf="@id/rvMainProfiles">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/general_margin"
+            android:layout_marginTop="@dimen/margin_task_icon"
+            android:text="@string/lbl_tasks"
+            android:textColor="@android:color/darker_gray"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMainTasks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/general_margin"
+            android:layout_weight="1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/viewholder_task" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

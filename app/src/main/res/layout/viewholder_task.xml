@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/general_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/btn_radius"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_task_icon">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTaskStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In Progress"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTaskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="Contact Page"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/size_txt_toolbar_title"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTaskStatus" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTaskStatusContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Design"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtTaskStatus" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTaskMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_task_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTaskTitle"
+            app:srcCompat="@drawable/ic_textsms" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTaskMsgCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="3"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivTaskMessage"
+            app:layout_constraintStart_toEndOf="@id/ivTaskMessage"
+            app:layout_constraintTop_toTopOf="@id/ivTaskMessage" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTaskAttachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/general_margin"
+            app:layout_constraintBottom_toBottomOf="@id/txtTaskMsgCount"
+            app:layout_constraintStart_toEndOf="@id/txtTaskMsgCount"
+            app:layout_constraintTop_toTopOf="@id/txtTaskMsgCount"
+            app:srcCompat="@drawable/ic_attach_file" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTaskAttachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="3"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivTaskAttachment"
+            app:layout_constraintStart_toEndOf="@id/ivTaskAttachment"
+            app:layout_constraintTop_toTopOf="@id/ivTaskAttachment" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTaskUnknown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="N 163"
+            android:layout_marginHorizontal="@dimen/general_margin"
+            android:textStyle="bold"
+            android:textAlignment="viewEnd"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toStartOf="@id/ivTaskProfiles"
+            app:layout_constraintTop_toTopOf="@id/txtTaskAttachment"
+            app:layout_constraintStart_toEndOf="@id/txtTaskAttachment"
+            app:layout_constraintBottom_toBottomOf="@id/txtTaskAttachment"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ivTaskProfiles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/viewholder_profile"
+            android:paddingStart="@dimen/general_margin"
+            app:layout_constraintTop_toTopOf="@id/txtTaskUnknown"
+            app:layout_constraintBottom_toBottomOf="@id/txtTaskUnknown"
+            app:layout_constraintStart_toEndOf="@id/txtTaskUnknown"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/general_margin">
+
+    <com.linhtetko.custom_view_assignment.components.ProfileImage
+        android:id="@+id/ivAttachFile"
+        android:layout_width="@dimen/sizeAttachFileImage"
+        android:layout_height="@dimen/sizeAttachFileImage"
+        android:layout_marginEnd="@dimen/general_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/male_cartoon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttachName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/general_margin"
+        android:text="Reference File 1"
+        android:textColor="@color/blueBlack"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/lpAttach"
+        app:layout_constraintEnd_toStartOf="@id/tvAttachFileSize"
+        app:layout_constraintStart_toEndOf="@id/ivAttachFile"
+        app:layout_constraintTop_toTopOf="@id/ivAttachFile" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAttachFileSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/general_margin"
+        android:layout_marginEnd="@dimen/general_margin"
+        android:text="141 KB"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvAttachName"
+        app:layout_constraintEnd_toStartOf="@id/btnClose"
+        app:layout_constraintTop_toTopOf="@id/tvAttachName" />
+
+    <com.linhtetko.custom_view_assignment.components.ProfileImage
+        android:id="@+id/btnClose"
+        android:layout_width="@dimen/size_img_list_profile"
+        android:layout_height="@dimen/size_img_list_profile"
+        android:padding="@dimen/margin_2x"
+        app:cornerRadius="@dimen/btn_radius_profile"
+        app:tint="@color/blueBlack"
+        app:strokeColor="@color/blueBlack"
+        app:srcCompat="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/ivAttachFile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivAttachFile" />
+
+    <com.linhtetko.custom_view_assignment.components.LinearProgressbar
+        android:id="@+id/lpAttach"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_linear_progress"
+        android:layout_marginHorizontal="@dimen/general_margin"
+        app:layout_constraintBottom_toBottomOf="@id/btnClose"
+        app:layout_constraintEnd_toStartOf="@id/btnClose"
+        app:layout_constraintStart_toEndOf="@id/ivAttachFile"
+        app:layout_constraintTop_toBottomOf="@id/tvAttachName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

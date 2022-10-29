@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_2x"
+    android:gravity="center_vertical">
+
+    <com.linhtetko.custom_view_assignment.components.ProfileImage
+        android:id="@+id/btnProfileActionShare"
+        android:layout_width="@dimen/size_profile_action"
+        android:layout_height="@dimen/size_profile_action"
+        android:padding="@dimen/margin_2x"
+        app:srcCompat="@drawable/ic_share"
+        app:strokeColor="?attr/colorSecondary"
+        app:tint="?attr/colorSecondary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProfileActionMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_3x"
+        android:layout_weight="1"
+        android:backgroundTint="?attr/colorSecondary"
+        android:paddingVertical="@dimen/margin_2x"
+        android:text="@string/lbl_message"
+        app:cornerRadius="@dimen/margin_3x" />
+
+    <com.linhtetko.custom_view_assignment.components.ProfileImage
+        android:id="@+id/btnProfileActionDone"
+        android:layout_width="@dimen/size_profile_action"
+        android:layout_height="@dimen/size_profile_action"
+        android:padding="@dimen/margin_2x"
+        app:srcCompat="@drawable/ic_assignment_turned_in"
+        app:strokeColor="?attr/colorSecondary"
+        app:tint="?attr/colorSecondary" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
