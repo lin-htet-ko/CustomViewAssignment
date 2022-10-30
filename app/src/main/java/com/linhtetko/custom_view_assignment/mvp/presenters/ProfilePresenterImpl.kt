@@ -14,4 +14,16 @@ class ProfilePresenterImpl: ViewModel(), ProfilePresenter {
     override fun onTapBack() {
         mView?.navigateToBack()
     }
+
+    override fun onTapShare() {
+        
+    }
+
+    override fun onTapMessage() {
+        
+    }
+
+    override fun onTapDoneTasks() {
+        
+    }
 }

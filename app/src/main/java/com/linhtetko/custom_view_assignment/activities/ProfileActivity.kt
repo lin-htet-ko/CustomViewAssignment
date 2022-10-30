@@ -15,7 +15,7 @@ import com.linhtetko.custom_view_assignment.mvp.views.ProfileView
 import com.linhtetko.custom_view_assignment.viewpods.ProfileActionsViewPods
 import kotlinx.android.synthetic.main.activity_profile.*
 
-class ProfileActivity : AppCompatActivity(), ProfileView, ProfileActionsDelegate {
+class ProfileActivity : AppCompatActivity(), ProfileView {
 
     companion object {
         fun newIntent(context: Context): Intent {
@@ -38,7 +38,7 @@ class ProfileActivity : AppCompatActivity(), ProfileView, ProfileActionsDelegate
 
     private fun setUpViewPods() {
         val profileActions = vpProfileActions as ProfileActionsViewPods
-        profileActions.setUpDelegate(this)
+        profileActions.setUpDelegate(presenter)
     }
 
     private fun setUpListener() {
@@ -66,17 +66,5 @@ class ProfileActivity : AppCompatActivity(), ProfileView, ProfileActionsDelegate
 
     override fun navigateToBack() {
         super.onBackPressed()
-    }
-
-    override fun onTapShare() {
-        TODO("Not yet implemented")
-    }
-
-    override fun onTapMessage() {
-        TODO("Not yet implemented")
-    }
-
-    override fun onTapDoneTasks() {
-        TODO("Not yet implemented")
     }
 }
